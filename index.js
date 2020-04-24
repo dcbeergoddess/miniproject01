@@ -61,18 +61,18 @@ inquirer.prompt([
       repoArray.forEach( repo => {
 
         //Create each li tag for the current repo
-        const liTag1 = createLiTag("Id: " + repo.id) // <li>Id: 45423235<li>
-        const liTag2 = createLiTag("Name: " + repo.name)
+        const liTag1 = createTag("li","Id: " + repo.id) // <li>Id: 45423235<li>
+        const liTag2 = createTag("li", "Name: " + repo.name)
 
         //Join two li tags together into a single string
         const allLiTags = liTag1 + liTag2
 
         //Put the string of li tags inside the <ul> tag
-        const ulTag = createUlTag(allLiTags) //<ul><li>....<li></li>...etc.
+        const ulTag = createTag("ul", allLiTags) //<ul><li>....<li></li>...etc.
 
         //Put the ul tag inside of a div
 
-        const divTag = createDiv(ulTag) //<div>...</div>
+        const divTag = createTag("div", ulTag) //<div>...</div>
 
         // Add the div tag for this repo to the html
         html += divTag
